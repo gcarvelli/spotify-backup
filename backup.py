@@ -34,5 +34,5 @@ if discover:
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    with open(save['timestamp'] + '.json', 'w') as text_file:
+    with open(os.path.join(directory, save['timestamp'] + '.json'), 'w') as text_file:
         text_file.write(json.dumps(save))
