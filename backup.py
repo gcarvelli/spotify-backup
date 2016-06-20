@@ -5,6 +5,7 @@ import json
 import datetime
 
 username = os.getenv('SPOTIPY_USERNAME')
+directory = os.getenv('SPOTIPY_DIRECTORY')
 
 token = util.prompt_for_user_token(username, 'playlist-read-private playlist-read-collaborative')
 
@@ -17,7 +18,7 @@ if discover:
     # spotify playlists are owner by the spotify user "spotifydiscover"
     save = {}
     save['name'] = discover['name']
-    save['timestamp'] = datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
+    save['timestamp'] = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     save['tracks'] = []
     tracks = sp.user_playlist_tracks(discover['owner']['id'], discover['id'])
 
@@ -30,6 +31,8 @@ if discover:
         t_save['artist'] = [ artist['name'] for artist in track['track']['artists'] ]
         save['tracks'].append(t_save)
 
-    #if not os.path.exists(directory):
-    #    os.makedirs(directory)
-    print json.dumps(tracks)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    with open(save['timestamp'] + '.json', 'w') as text_file:
+        text_file.write(json.dumps(save))
