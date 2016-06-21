@@ -1,6 +1,6 @@
 
 # spotify-backup
-Download your Spotify playlists information! This application utilizes [Spotipy](https://github.com/plamere/spotipy) (an unofficial Spotify Python API wrapper).
+Download your Spotify playlists information! This application utilizes [Spotipy](https://github.com/plamere/spotipy) (an unofficial Spotify API wrapper for Python).
 
 ### Using spotify-backup
 
