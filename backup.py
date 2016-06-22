@@ -4,14 +4,20 @@ import os
 import json
 import datetime
 
-username = os.getenv('SPOTIPY_USERNAME')
-directory = os.getenv('SPOTIPY_DIRECTORY')
+with open('config.json', 'r') as f:
+    config = json.loads(f.read())
 
-token = util.prompt_for_user_token(username, 'playlist-read-private playlist-read-collaborative')
+directory = config['save-directory']
+
+token = util.prompt_for_user_token(config['username'], \
+                                   'playlist-read-private playlist-read-collaborative', \
+                                   config['spotipy']['client_id'], \
+                                   config['spotipy']['client_secret'], \
+                                   config['spotipy']['redirect_uri'])
 
 sp = spotipy.Spotify(auth=token)
 
-playlists = sp.user_playlists(username)
+playlists = sp.user_playlists(config['username'])
 discover = next((p for p in playlists['items'] if p['name'] == 'Discover Weekly'), None)
 
 if discover:

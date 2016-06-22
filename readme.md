@@ -4,15 +4,9 @@ Download your Spotify playlists information! This application utilizes [Spotipy]
 
 ### Using spotify-backup
 
-spotify-backup requires the following environment variables to be declared.
-
-```
-SPOTIPY_CLIENT_ID="Spotify client ID from developer.spotify.com"
-SPOTIPY_CLIENT_SECRET="Spotify client secret from developer.spotify.com"
-SPOTIPY_REDIRECT_URI="callback you added in your Spotify app (ex. http://localhost/callback)"
-SPOTIPY_USERNAME="your Spotify username (find by navigating to your profile and clicking 'Copy Spotify URL')"
-SPOTIPY_DIRECTORY="directory to store backups"
-```
+1. Visit developer.spotify.com and register your application.
+1. Copy `example-config.json` to `config.json` and enter your client id, client secret, and redirect uri (this is arbitrary, I use http://localhost/callback)
+1. Find your username by navigating to your profile and clicking 'Copy Spotify URL', then enter it into `config.json`.
 
 Then just launch to download playlists!
 ```

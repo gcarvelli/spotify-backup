@@ -1,0 +1,9 @@
+{
+    "spotipy": {
+        "client_id": "your_client_ID",
+        "client_secret": "your_client_secret",
+        "redirect_uri": "your_redirect_URI"
+    },
+    "username": "your_username",
+    "save-directory": "backups/"
+}
