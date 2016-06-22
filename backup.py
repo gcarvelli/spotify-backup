@@ -1,3 +1,5 @@
+#! /usr/bin/python
+
 import spotipy
 import spotipy.util as util
 import os
