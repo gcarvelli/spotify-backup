@@ -8,7 +8,7 @@ Download your Spotify playlists information! This application utilizes [Spotipy]
 1. Copy `example-config.json` to `config.json` and enter your client id, client secret, and redirect uri (this is arbitrary, I use http://localhost/callback)
 1. Find your username by navigating to your profile and clicking 'Copy Spotify URL', then enter it into `config.json`.
 
-Then just launch to download playlists!
+Then just launch to download playlist metadata!
 ```
 python backup.py
 ```
